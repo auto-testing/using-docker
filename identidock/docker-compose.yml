@@ -1,0 +1,20 @@
+# docker-compose build
+# docker-compose up -d
+
+identidock:
+    build: .
+    ports:
+        - "5000:5000"
+    environment:
+        ENV: DEV
+    volumes:
+        - ./app:/app
+    links:
+        - dnmonster
+        - redis_cont
+
+dnmonster:
+    image:  amouat/dnmonster:1.0
+        
+redis_cont: 
+    image: redis:3.0
