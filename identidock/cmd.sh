@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+echo "Starting cmd.sh..."
 
 if [ "$ENV" == 'DEV' ]
 then
