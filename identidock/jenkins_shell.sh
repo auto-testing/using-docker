@@ -1,4 +1,4 @@
-cd identidock # FOR source: https://github.com/auto-testing/using-docker.git
+# cd identidock # FOR source: https://github.com/auto-testing/using-docker.git
 
 #Default compose args
 COMPOSE_ARGS=" -f jenkins.yml -p jenkins "
