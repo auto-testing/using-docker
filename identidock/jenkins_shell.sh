@@ -20,10 +20,10 @@ if [ $ERR -eq 0 ]; then
   IP=$(sudo docker inspect -f {{.NetworkSettings.IPAddress}} jenkins_identidock_1)
   CODE=$(curl -sL -w "%{http_code}" $IP:9090/monster/bla -o /dev/null) || true
   if [ $CODE -ne 200 ]; then
-    echo "Test passed - Tagging:TODO"
-    # HASH=$(git rev-parse --short HEAD)
-    # sudo docker tag -f jenkins_identidock amouat/identidock:$HASH
-    # sudo docker tag -f jenkins_identidock amouat/identidock:newest
+    echo "Test passed - Tagging:"
+    HASH=$(git rev-parse --short HEAD)
+    sudo docker tag -f jenkins_identidock testerxx09/using-docker.identidock:$HASH
+    sudo docker tag -f jenkins_identidock testerxx09/using-docker.identidock
     # echo "Pushing"
     # sudo docker login -e joe@bloggs.com -u jbloggs -p jbloggs123
     # sudo docker push amouat/identidock:$HASH
