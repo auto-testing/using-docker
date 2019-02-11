@@ -22,8 +22,8 @@ if [ $ERR -eq 0 ]; then
   if [ $CODE -ne 200 ]; then
     echo "Test passed - Tagging:"
     HASH=$(git rev-parse --short HEAD)
-    sudo docker tag -f jenkins_identidock testerxx09/using-docker.identidock:$HASH
-    sudo docker tag -f jenkins_identidock testerxx09/using-docker.identidock
+    sudo docker tag jenkins_identidock testerxx09/using-docker.identidock:$HASH
+    sudo docker tag jenkins_identidock testerxx09/using-docker.identidock:newest
     # echo "Pushing"
     # sudo docker login -e joe@bloggs.com -u jbloggs -p jbloggs123
     # sudo docker push amouat/identidock:$HASH
